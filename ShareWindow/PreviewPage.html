@@ -54,8 +54,8 @@
                     function (result) {
                         var imgIndex = 0 + result;
                         if (imgIndex != self.lastImgIndex) {
-                            self.LoadImage();
                             self.lastImgIndex = imgIndex;
+                            self.LoadImage();
                         }
                     },
                     function () {

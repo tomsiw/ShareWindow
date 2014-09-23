@@ -36,7 +36,7 @@ namespace ShareWindow
 
         void Picker_WindowSelected(object sender, EventArgs e)
         {
-            windowHandle = picker.SelectedWindowHandle;
+            windowHandle = picker.WindowHandle;
             DisposePicker();
             startStopToolStripButton.Checked = true;
             StartBroadcast();
@@ -47,8 +47,15 @@ namespace ShareWindow
         {
             picker = new WindowPicker();
             picker.WindowSelected += Picker_WindowSelected;
+            picker.WindowHoovered += Picker_WindowHoovered;
             picker.Start();
             pickWindowToolStripButton.Checked = true;
+        }
+
+        void Picker_WindowHoovered(object sender, EventArgs e)
+        {
+            var windowInfo = new WindowInfo(picker.WindowHandle);
+            toolStripStatusLabel.Text = "On : " + windowInfo.WindowTitle;
         }
 
         private void DisposePicker()
