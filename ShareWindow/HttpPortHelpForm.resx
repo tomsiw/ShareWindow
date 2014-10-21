@@ -120,8 +120,9 @@
   <data name="textBox1.Text" xml:space="preserve">
     <value>The application needs permissions to use selected port. To add such permissions you can use command line:
 netsh http add urlacl url=http://+:[port] user=DOMAIN\user
-or you can use utility called HTTP Namespaces. To run the utility close this window and click button "HTTP Namespaces"
-
+or you can use utility called HTTP Namespaces. To run the utility close this window and click button "HTTP Namespaces". 
+See this link  for more details:
+http://blogs.msdn.com/b/paulwh/archive/2007/05/04/addressaccessdeniedexception-http-could-not-register-url-http-8080.aspx
 Additionally you will need to unblock selected port in the firewall (inbound is enought)
 </value>
   </data>
